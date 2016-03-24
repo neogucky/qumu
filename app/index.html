@@ -29,7 +29,7 @@
                 <th>Forks</th></tr>
         </thead>
         <tbody>
-            <tr ng-repeat="repository in repositoryList">
+            <tr ng-repeat="repository in repositoryList | orderBy : '-stargazers_count'">
                 <td>{{repository.name}}</td>
                 <td>{{repository.stargazers_count}}</td>
                 <td>{{repository.watchers}}</td>
