@@ -1,0 +1,29 @@
+<h1>Showing the repository: <b>{{ repository.name }}</b></h1>
+
+<a href="/app/#/repositories">back to overview</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>Repository name</th>
+            <th>Stars</th>
+            <th>Watchers</th>
+            <th>Forks</th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{repository.name}}</td>
+            <td>{{repository.stargazers_count}}</td>
+            <td>{{repository.watchers}}</td>
+            <td>{{repository.forks}}</td>
+        </tr>
+        <tr>
+            <td colspan="4"><a href="{{repository.svn_url}}">{{repository.svn_url}}</a></td>
+        </tr>
+        <tr>
+            <td colspan="4">{{repository.description}}</td>
+        </tr>
+    </tbody>
+    
+    
+</table>
