@@ -1,6 +1,6 @@
 <h1>Showing repositories belonging to: <b>{{ repositoryList[0].owner.login }}</b></h1>
 
-<input type="text" ng-model="selectedOwner" placeholder="Whos repositories?"/>
+<input ng-keypress="updateOnEnter($event)" type="text" ng-model="selectedOwner" placeholder="Whos repositories?"/>
 <button ng-click="updateList()">refresh</button>
 
 <table>

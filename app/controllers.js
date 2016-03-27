@@ -16,6 +16,14 @@ controller('repositoriesController', function($scope, githubAPI) {
                 });
            }
            
+           $scope.updateOnEnter = function($event) {
+           
+                if ($event.keyCode == 13 /*Enter*/) {
+                    $scope.updateList();
+                }
+           
+           }
+           
            $scope.updateList();
            
            }).
