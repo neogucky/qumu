@@ -14,7 +14,7 @@
     <tbody>
         <tr ng-repeat="repository in repositoryList | orderBy : '-stargazers_count'">
             
-                <td><a href="#/repositories/{{ repository.name }}">{{repository.name}}</a></td>
+                <td><a href="#/repositories/{{ repository.owner.login }}/{{ repository.name }}">{{repository.name}}</a></td>
                 <td>{{repository.stargazers_count}}</td>
                 <td>{{repository.watchers}}</td>
                 <td>{{repository.forks}}</td>

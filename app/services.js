@@ -8,9 +8,9 @@ factory('githubAPI', function($http) {
             return $http.get("https://api.github.com/users/" +  $scope.selectedOwner + "/repos");
         }
         
-        githubAPI.getRepository = function($scope, $repo){
+        githubAPI.getRepository = function($scope, $owner, $repo){
         
-            return $http.get("https://api.github.com/repos/" +  $scope.selectedOwner + "/" + $repo);
+            return $http.get("https://api.github.com/repos/" +  $owner + "/" + $repo);
         }
         
         return githubAPI;

@@ -7,6 +7,6 @@ angular.module('GithubReader', [
 ]).config(['$routeProvider', function($routeProvider) {
         $routeProvider.
         when("/repositories/", {templateUrl: "views/repositories.html", controller: "repositoriesController"}).
-        when("/repositories/:id", {templateUrl: "views/repository.html", controller: "repositoryController"}).
+        when("/repositories/:owner/:id", {templateUrl: "views/repository.html", controller: "repositoryController"}).
         otherwise({redirectTo: '/repositories'});
         }]);

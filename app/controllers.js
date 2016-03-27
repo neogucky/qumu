@@ -10,19 +10,21 @@ controller('repositoriesController', function($scope, githubAPI) {
            
            $scope.updateList = function() {
            
-           //retrieve repository data from gitHub
-           githubAPI.getRepositories($scope).success(function (response) {
-                                                     $scope.repositoryList = response;
-                                                     });
+                //retrieve repository data from gitHub
+                githubAPI.getRepositories($scope).success(function (response) {
+                      $scope.repositoryList = response;
+                });
            }
            
            $scope.updateList();
+           
            }).
+
 controller('repositoryController', function($scope, $routeParams, githubAPI) {
            
            $scope.repository = {};
            
-           githubAPI.getRepository($scope, $routeParams.id).success(function (response) {
+           githubAPI.getRepository($scope, $routeParams.owner, $routeParams.id).success(function (response) {
                 $scope.repository =  response;
            });
     });
