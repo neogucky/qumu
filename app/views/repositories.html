@@ -19,8 +19,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="repository in repositoryList | orderBy : '-stargazers_count'">
-                    <td class="name"><a href="#/repositories/{{ repository.owner.login }}/{{ repository.name }}">{{repository.name}}</a></td>
+                <tr class="link" ng-click="selectRepository(repository.owner.login, repository.name)" ng-repeat="repository in repositoryList | orderBy : '-stargazers_count'">
+                    <td class="name">{{repository.name}}</td>
                     <td class="counter">{{repository.stargazers_count}}</td>
                     <td class="counter">{{repository.watchers}}</td>
                     <td class="counter">{{repository.forks}}</td>

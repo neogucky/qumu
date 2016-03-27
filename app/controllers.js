@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('GithubReader.controllers', []).
-controller('repositoriesController', function($scope,  $routeParams, githubAPI) {
+controller('repositoriesController', function($scope,  $routeParams, githubAPI, $location) {
            $scope.selectedOwner =  $routeParams.owner;
            
            //initialize repository list as empty before the first request ran throgh
@@ -23,6 +23,13 @@ controller('repositoriesController', function($scope,  $routeParams, githubAPI) 
                 }
            
            }
+         
+           $scope.selectRepository = function($owner, $repository) {
+           
+                $location.path('/repositories/' + $owner + '/' + $repository);
+           
+           }
+
            
            $scope.updateList();
            
@@ -34,6 +41,11 @@ controller('repositoryController', function($scope, $routeParams, githubAPI, $lo
            
            githubAPI.getRepository($scope, $routeParams.owner, $routeParams.id).success(function (response) {
                 $scope.repository =  response;
+                                                                                        
+                if (!$scope.repository.description) {
+                    $scope.repository.description = '-';
+                }
+                                                                                        
            });
            
            $scope.back = function() {
